@@ -1,0 +1,224 @@
+/* ── Layout ── */
+#root {
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  text-align: center;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 0.25rem;
+}
+
+.subtitle {
+  color: #888;
+  margin-bottom: 2rem;
+  font-size: 0.95rem;
+}
+
+/* ── Probability Inputs Panel ── */
+.inputs-panel {
+  background: #1e1e2e;
+  border-radius: 12px;
+  padding: 1.5rem 2rem;
+  margin-bottom: 2rem;
+  text-align: left;
+}
+
+.inputs-panel h2 {
+  margin: 0 0 1rem;
+  font-size: 1.1rem;
+  color: #ccc;
+  text-align: center;
+}
+
+.input-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.25rem 2rem;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.input-group label {
+  font-size: 0.8rem;
+  color: #aaa;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.input-group .slider-row {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.25rem;
+}
+
+.input-group input[type="range"] {
+  width: 100%;
+  accent-color: #646cff;
+  height: 6px;
+}
+
+.input-group .pct-value {
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-align: center;
+  color: #e0e0e0;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ── Tabs ── */
+.tabs {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.tab-btn {
+  padding: 0.5rem 1.25rem;
+  border-radius: 8px;
+  border: 1px solid #444;
+  background: transparent;
+  color: #aaa;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.tab-btn:hover {
+  border-color: #646cff;
+  color: #fff;
+}
+
+.tab-btn.active {
+  background: #646cff;
+  border-color: #646cff;
+  color: #fff;
+}
+
+/* ── Scenario Card ── */
+.scenario-card {
+  background: #1e1e2e;
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: left;
+}
+
+.scenario-card h2 {
+  margin: 0 0 0.25rem;
+  font-size: 1.3rem;
+}
+
+.scenario-card .scenario-desc {
+  color: #888;
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+
+/* ── Comparison Grid ── */
+.comparison {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.option-card {
+  border-radius: 10px;
+  padding: 1.25rem;
+  border: 2px solid #333;
+  background: #16161e;
+  transition: border-color 0.3s;
+  position: relative;
+}
+
+.option-card.winner {
+  border-color: #4ade80;
+}
+
+.option-card .badge {
+  position: absolute;
+  top: -10px;
+  right: 12px;
+  background: #4ade80;
+  color: #111;
+  font-size: 0.7rem;
+  font-weight: 800;
+  padding: 2px 10px;
+  border-radius: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.option-card h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.05rem;
+}
+
+.option-card .win-prob {
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin: 0.5rem 0;
+  font-variant-numeric: tabular-nums;
+}
+
+.option-card .win-prob.green { color: #4ade80; }
+.option-card .win-prob.blue  { color: #60a5fa; }
+
+.option-card .formula {
+  font-size: 0.75rem;
+  color: #777;
+  font-family: 'Courier New', monospace;
+  word-break: break-all;
+  margin-top: 0.5rem;
+  line-height: 1.5;
+}
+
+/* ── Edge Calculation ── */
+.edge {
+  text-align: center;
+  padding: 1rem;
+  border-radius: 10px;
+  background: #12121a;
+}
+
+.edge .edge-label {
+  font-size: 0.85rem;
+  color: #888;
+  margin-bottom: 0.25rem;
+}
+
+.edge .edge-value {
+  font-size: 1.4rem;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+}
+
+.edge .edge-value.positive { color: #4ade80; }
+.edge .edge-value.negative { color: #f87171; }
+.edge .edge-value.neutral  { color: #888; }
+
+.edge .edge-summary {
+  font-size: 0.85rem;
+  color: #aaa;
+  margin-top: 0.25rem;
+}
+
+/* ── Responsive ── */
+@media (max-width: 600px) {
+  .comparison {
+    grid-template-columns: 1fr;
+  }
+  .input-grid {
+    grid-template-columns: 1fr;
+  }
+}
