@@ -64,22 +64,8 @@ function down8(
  *   XP strat:  P(Onside)·P(TD) + (1-P(Onside))·P(XP)·P(TD)·P(OT)
  *   2P strat:  P(Onside)·P(TD) + (1-P(Onside))·P(2P)·P(TD)
  */
-function down4(
-  onside: number,
-  td: number,
-  ot: number,
-  xp: number,
-  twoP: number,
-) {
-  // Direct onside-TD path: win regardless of conversion
-  const direct = onside * td;
-  // Secondary path: no onside, but get the ball back normally.
-  // XP→-3: need FG to tie → OT
-  const xpStrat = direct + (1 - onside) * xp * td * ot;
-  // 2P→-2: need FG to go ahead → WIN
-  const twoPStrat = direct + (1 - onside) * twoP * td;
-  return { xp: xpStrat, twoP: twoPStrat };
-}
+
+// Direct onside-TD path: win regardless of conversion
 
 /**
  * Scenario 3 — Down 1 (was -7, scored TD)
@@ -87,15 +73,6 @@ function down4(
  *   Kick XP → tied → OT → P(XP)·P(OT)
  *   Go for 2 → take the lead → P(2P)
  */
-function down1(
-  _onside: number,
-  _td: number,
-  ot: number,
-  xp: number,
-  twoP: number,
-) {
-  return { xp: xp * ot, twoP: twoP };
-}
 
 // ── Scenario metadata ────────────────────────────────────
 interface Scenario {
